@@ -1,0 +1,761 @@
+body,html{
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+}
+
+.inner{
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*header*/
+.header-container{
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    top: 0; left: 0;
+    background: transparent;
+    z-index: 999;
+}
+div.header-top-container{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-top-container ul{
+    display: flex;
+}
+
+ul.header-login li{
+    position: relative;
+}
+
+ul.header-login li::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: #dddddd;
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+ul.header-login li a{
+    color: #ffffff;
+    font-size: 11px;
+    display: block;
+    padding: 9px 14px;
+}
+
+ul.header-sns{
+    padding: 8px 24px 8px 12px;
+}
+
+ul.header-sns li{
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+}
+
+ul.header-sns li:last-child{
+    margin-right: 0;
+}
+
+ul.header-sns li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url("../images/icon_sns_01.png");
+    background-repeat: no-repeat;
+    background-size: 56px 14px;    
+}
+
+ul.header-sns li:first-child >a{
+    background-position: -28px;
+}
+
+ul.header-sns li:nth-child(2) >a{
+    background-position: -42px;
+}
+
+.hidden{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+}
+
+/*
+ir기법 (image replace)
+1. text-indent : -9999px
+2. position -> left : 9999px
+*/
+
+
+/*header bottom*/
+div.header-bottom-container{
+    width: 100%;
+    height: 90px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding:0 30px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+h1.logo {
+    width: 109px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+}
+
+h1.logo a{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/h1_logo.png");
+    background-repeat: no-repeat;
+}
+nav.gnb{
+    height: 100%;
+}
+
+nav ul{
+    display: flex;
+    height: 100%;
+}
+
+nav ul li{
+    padding: 0 30px;
+    font-weight: bold;
+}
+
+nav.gnb ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    line-height: 90px;
+}
+
+nav.gnb ul li a:after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 6px;
+    background: gold;
+    transition: 0.25s;
+    margin-top: -6px;
+    transform: scaleX(0);
+}
+
+nav.gnb ul li:hover a:after{
+    width: 100%;
+    transform: scaleX(1);
+}
+
+nav.gnb ul li:hover a{
+    color: gold;          
+}
+
+div.mobile-btn{
+    width: 25px;
+    height: 22px;
+    display: none;
+}
+
+div.mobile-btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 250ms;
+}
+
+div.mobile-btn a span{
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #333333;
+    position: absolute;
+    left: 0;
+    transition: 250ms;
+}
+
+div.mobile-btn a span:nth-child(1){
+    top : 0
+}
+div.mobile-btn a span:nth-child(2){
+    top : 9px
+}
+div.mobile-btn a span:nth-child(3){
+    top : 18px
+}
+
+div.mobile-btn a:hover span:nth-child(1){
+    top: 9px;
+    transition-delay: 150ms;
+}
+div.mobile-btn a:hover span:nth-child(2){
+    transform: scaleX(0);
+}
+
+div.mobile-btn a:hover span:nth-child(3){
+    transform:rotate(90deg);
+    transition-delay: 150ms;
+    top: 9px;
+}
+
+div.mobile-btn a:hover{
+    transform:rotate(45deg);
+    transition-delay: 300ms;
+}
+.visual-container{
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+div.visual-list{
+    width: 100%;
+    height: 100%;
+}
+div.visual-item{
+    width: 100%;
+    height: 100%;
+}
+div.visual-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/visual01.jpg) no-repeat center top / cover;
+}
+
+div.visual-control-container{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow:hidden;
+}
+
+.dot-container{
+    width: 1170px;
+    height: 100%;
+    position: relative;
+}
+
+div.dot-container ul{
+    width: 100%;
+    height: 30px;
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.dot-container ul li{
+    padding: 0 4px;
+    width: 50px;
+    height: 5px;
+}
+
+div.dot-container ul li a:hover {
+    background: gold;
+}
+
+div.dot-container ul li{
+    padding: 0 4px;
+    width: 50px;
+    height: 5px;
+}
+
+div.dot-container ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #dddddd;
+}
+
+.pause-play-btn{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon_play.png) no-repeat;
+    background-size: 60px 30px;
+    position: absolute;
+    top: 0;
+    left:420px;
+}
+ 
+.pause-play-btn:hover{
+    background-position: -30px 0;
+}
+
+
+
+
+
+
+
+
+
+
+div.content1{
+    padding : 64px 0;
+    background: white;
+}
+
+.intro-container{
+    width: 100%;
+    display: flex;
+    margin-bottom: 64px;
+}
+
+article.content-item{
+    flex-basis: 50%;
+    position: relative;
+    flex-grow: 1;
+    border-bottom: solid 6px #333333;
+    background: #eeeeee;
+}
+
+article.content-item::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: gold;
+    transition: 300ms;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+}
+
+article.content-item:hover::after{
+    transform: scaleX(1);
+}
+
+article.intro-container{
+    width: 100%;
+    display: flex;
+    margin-bottom: 64px;
+}
+
+.content-item:nth-of-type(1){
+    margin-right: 2.7%;
+}
+
+div.item-image{
+    padding-top: 62.1%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div.item-text{
+    background: #eeeeee;
+    padding: 30px 26px 26px;
+}
+
+.item-title{
+    margin-bottom: 34px;
+}
+
+.item-title span{
+    display: block;
+    font-size: 22px;
+    line-height: 130%;
+}
+
+.item-icon{
+    display: flex;
+    align-content: center;
+}
+
+.menu{
+    background: url(../images/main_img_01.jpg);
+}
+
+.local{
+    background: url(../images/main_img_02.jpg);
+}
+
+.item-icon::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../images/btn_link.png) no-repeat 0px center / 40px 20px;
+    margin-right: 8px;
+    transition: 300ms;
+}
+.content-item:hover div.item-icon::before{
+    background-position: -20px;
+}
+
+
+/* franchise*/
+
+section.franchise-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+div.content-title-box{
+    background: gold;
+    padding: 60px 0 60px 30px;
+    margin-right: 2.7%;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+h2.content-title{
+    font-size: 36px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h2.content-title::after{
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: #333333;
+    margin-top: 40px;
+}
+
+.content-text{
+    font-size: 13px;
+    line-height: 150%;
+    font-weight: 600;
+}
+
+div.franchise-list{
+    display: flex;
+    flex-grow: 1;
+}
+
+div.franchise-list .item-title{
+    font-size: 20px;
+}
+
+div.item-text2{
+    background: #eeeeee;
+    padding: 20px 18px 20px;
+}
+
+.aa{
+    background: url(../images/main_img_03.jpg);
+}
+
+.bb{
+    background: url(../images/main_img_04.jpg);
+}
+
+
+/*brand-container*/
+section.brand-container{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.brand-bg{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/main_visual_02.jpg") no-repeat center center/ cover;
+    transition: 1.5s;
+    z-index: 1;
+}
+
+div.brand-bg:hover{
+    transform: scale(1.05);
+}
+
+div.inner{
+    z-index: 999;
+    position: relative;
+}
+
+div.brand-title-box{
+    background: rgba(50, 50, 50, 0.8);
+    height: 100%;
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 90px 20px;
+    box-sizing: border-box;
+}
+
+h2.brand-title{
+    color: white;
+    font-size: 36px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+h2.brand-title::after{
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: white;
+    margin-top: 40px;
+}
+
+.brand-text{
+    color: white;
+    font-size: 15px;
+    line-height: 170%;
+    margin-top: 10px;
+}
+a.brand-link-btn{
+    display: inline-block;
+    padding: 20px 50px;
+    border: solid 2px   #ffffff;
+    color: #ffffff;
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+}
+a.brand-link-btn:hover{
+    color: #333333;
+    background: #ffffff;
+}
+
+
+/*food-container*/
+div.content02-container{
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 0 110px;
+}
+
+section.food-container{
+    width: 100%;
+    height: 480px;
+    display: flex;
+}
+
+section.food-container div.item-image{
+    height: 100%;
+    width: 74.3%;
+    padding: 0;
+    background: url(../images/main_img_05.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+section.food-container div.content-title-box{
+    width: 400px;
+    height: 100%;
+    box-sizing: border-box;
+    background: #eeeeee;
+    border-bottom: solid 5px #333333;
+    position: relative;
+}
+
+section.food-container div.content-title-box::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: gold;
+    transition: 300ms;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+}
+
+section.food-container:hover div.content-title-box::after{
+    transform: scaleX(1);
+}
+
+section.food-container div.item-icon{
+    position: absolute;
+    bottom: 30px;
+}
+
+section.food-container:hover div.item-icon::before{
+    background-position: -20px;
+}
+section.food-container h2.content-title{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+section.food-container div.content-title-box p.content-text span{
+    display: block;
+}
+
+@media screen and (max-width: 1169px){
+    .inner{
+        width: 100%;
+        }
+    
+    .visual-container{
+        width: 100%;
+        }
+
+    .item-title span{
+        display: inline;
+        font-size: 18px;
+    }
+    div.content1{
+        padding-top:30px ;
+    }
+
+    .intro-container{
+        padding: 0 10px;
+    }
+    div.intro-container,
+    section.franchise-contariner{
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    div.content-title-box{
+        padding: 60px 10px;
+    }
+    h2.content-title{
+        font-size: 24px;
+    }
+    section.food-container div.content-title-box p.content-text span{
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 1023px){
+
+        div.header-top-container, nav.gnb{
+            display: none;
+        }
+
+        header.header-container,
+        div.header-bottom-container{
+            height: 60px;
+        }
+        h1.logo a{
+            width: 25px;
+            height: 25px;
+            display: block;
+            background-size: 25px 25px;
+            background-image: url("../images/m_h1_logo.png");
+        }
+        div.mobile-btn{
+            display: block;
+        }
+        .visual-container{
+        height: 380px;
+        }   
+        div.visual-cotrol-container div.inner{
+        width: 769px;
+        }
+    }
+    
+
+
+    @media screen and (max-width: 768px){
+        div.visual-cotrol-container div.inner{
+            width: 100%;
+        }
+        div.visual-item a{
+            background-image: url("../images/movbile-visual01.jpg");
+        }
+        section.franchise-container{
+            padding:0;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 640px;
+        }
+        div.content-title-box{
+            margin-right: 0;
+            margin-bottom: 12px;
+        }
+        section.brand-container{
+            height: 550px;
+            padding: 35px 3.2%;
+            box-sizing: border-box;
+        }
+        section.brand-container div.brand-title-box{
+            width: 100%;
+            padding:60px 20px;
+        }
+
+        section.food-container{
+            flex-direction: column;
+            height: auto;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        section.food-container div.item-image{
+            height: 0px;
+            padding-bottom:55.6%;
+            width: 100%;
+        }
+        
+        section.food-container div.content-title-box{
+            width: 100%;
+            height: auto;
+        }
+        section.food-container div.content-title-box p.content-text{
+            margin-bottom: 40px;
+        }
+    }   
+
+
+
+    @media screen and (max-width: 414px){
+        .pause-play-btn{
+            display: none;
+        }
+
+        div.intro-container{
+            flex-direction: column;
+        }
+        
+    .content-item:nth-of-type(1){
+        margin: 0 0 20px 0;
+        }
+
+        
+        section.franchise-container{
+            padding: 0;
+        }
+
+    div.content-title-box{
+        height: 450px;
+        box-sizing: border-box;
+    }
+    div.franchise-list{
+        margin-top: -120px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+
+    }
